@@ -3,10 +3,10 @@
 # Code Structure
 
 The code is divided into 4 parts:
-part 1: Create Encodings and save them
-part 2: Train the network
-part 3: Evaluate the errors
-part 4: Measure the performance
+Part 1: Create Encodings,
+Part 2: Train the Network,
+Part 3: Evaluate Residuals,
+Part 4: Performance Assessement
 
 # PART 1 - Create Encodings
 
@@ -23,22 +23,22 @@ In general the default parameters in each script have been selected as to produc
 Creation times for each encoding based on default training and validation datasets:
 Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
 
-1. GAF: Training set   -> 8 min
+1. GAF: Training set   -> 8 min ||
         Validation set -> 2.5 min
         
-2. MTF: Training set   -> 12 min
+2. MTF: Training set   -> 12 min ||
         Validation set -> 3.5 min
         
-3. RP:  Training set   -> 11 min
+3. RP:  Training set   -> 11 min ||
         Validation set -> 3 min
         
-4. SP:  Training set   -> 1 min
+4. SP:  Training set   -> 1 min ||
         Validation set -> 0.3 min
         
-5. SC:  Training set   -> 33 min
+5. SC:  Training set   -> 33 min ||
         Validation set -> 11 min
         
-6. GS:  Training set   -> 0.3 min
+6. GS:  Training set   -> 0.3 min ||
         Validation set -> 0.1 min
 
 
