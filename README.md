@@ -51,5 +51,24 @@ Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
 
 For basic modifications change the values of the argument parser variables. 
 
-- Train a new model: If you want to train a completely new model then just make sure that mode='new_encoding' and run the main script. Also make sure to choose one of the available encodings. The encoded data has to be 
+- Train a new model: If you want to train a completely new model then just make sure that mode='new_encoding' and run the main script. Also make sure to choose one of the available encodings. Here is an example:
+
+argp = parser.parse_args(
+    ['--path_data','../Part1_Encoding',
+     '--mode','new_encoding',
+     '--dataset','training',
+     '--cycles','500000',
+     '--conv_kernel_size_1','4',
+     '--conv_stride_1','2',
+     '--pool_kernel_size','2',
+     '--pool_stride','2',
+     '--nr_channels_1','32', 
+     '--bottleneck_size','160',
+     '--batch_size','100',
+     '--batch_size_testing','50',
+     '--performance_eval_steps','10',
+     '--checkpoint_save_steps','10000',
+     '--encoding','GAF'])
+     
+  In this case a new model is trained on GAF data. The model will perform 50'000 gradient descent steps using 100 encoding images in each iteration. The Loss gets computed after every 10 iterations and a checkpoint of the graph is saved after 10'000 iterations. To inspect the loss or the graph use tensorboard by running the following command in terminal: tensorboard --logdir=<absolute path to tensorboard summary>
 
