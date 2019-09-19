@@ -135,5 +135,5 @@ if __name__== '__main__':
 
     thresh=compute_threshold(errors_train=errors_train)
 
-    measure_performance(errors_test=errors_test,thresh=thresh,encoding='GS',path_ground_truth='/Users/gabrielrodriguez/Master 3/Semester Project/Classification/Ground Truth.csv')
+    measure_performance(errors_test=errors_test,thresh=thresh,encoding='GS',path_ground_truth='<path to ground truth file>.csv')
 
