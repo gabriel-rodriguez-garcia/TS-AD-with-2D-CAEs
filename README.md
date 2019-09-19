@@ -116,6 +116,10 @@ In order to compute the residuals stemming from the testing data, the script can
 In order to assess the model performance, make sure to have the ground truth saved in a specific folder and specify the directory when calling the function:<br/>
 measure_performance( ... ,path_ground_truth= < path to ground truth >.csv)
 
+Run the Performance.py script to see the roc curve.
+
+
+
     
         
        
