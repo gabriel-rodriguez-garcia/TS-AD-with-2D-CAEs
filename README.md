@@ -114,7 +114,7 @@ In order to compute the residuals stemming from the testing data, the script can
 # Part 4 -  Assess Model Performance
 
 In order to assess the model performance, make sure to have the ground truth saved in a specific folder and specify the directory when calling the function:<br/>
-measure_performance( ... ,path_ground_truth=<path to ground truth>.csv)
+measure_performance( ... ,path_ground_truth= < path to ground truth >.csv)
 
     
         
