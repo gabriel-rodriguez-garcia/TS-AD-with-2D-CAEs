@@ -48,10 +48,10 @@ Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
         Validation set -> 0.1 min
 
 # PART 2 - Train the Network
-![ScreenShot](2D-CAE_arch.png)
+![ScreenShot](/tree/master/2D-CAE_Architecture_Image/2D-CAE_arch.png)
 
 <p>
-  <img src="https://github.com/gabriel-rodriguez-garcia/TS-AD-with-2D-CAEs/tree/master/2D-CAE_Architecture_Image/2D-CAE_arch.png" width="350" title="hover text">
+  <img src="/tree/master/2D-CAE_Architecture_Image/2D-CAE_arch.png" width="350" title="hover text">
 </p>
 
 ![alt text](https://github.com/gabriel-rodriguez-garcia/TS-AD-with-2D-CAEs/tree/master/2D-CAE_Architecture_Image/2D-CAE_arch.png)
