@@ -73,7 +73,7 @@ argp = parser.parse_args( <br/>
   In this case a new model is trained on GAF data. The model will perform 50'000 gradient descent steps using 100 encoding images in each iteration. The loss gets computed after every 10 iterations and a checkpoint of the graph is saved after every 10'000 iterations. To inspect the loss or the graph use tensorboard by running the following command in terminal: <br/>
  tensorboard --logdir = < path to tensorboard summary >
         
- - Continue to train a model: If you want to continue to train a model whose checkpoint has been saved before, the just change mode='continue_training'. Note that all other parameters have to be equal to the ones saved in the checkpoint.
+ - Continue to train a model: If you want to continue to train a model whose checkpoint has been saved before, then just change mode='continue_training'. Note that all other parameters have to be equal to the ones saved in the checkpoint.
  
  <br/>
  
@@ -97,4 +97,7 @@ argp = parser.parse_args( <br/>
      '--encoding','GAF'])
      
 In this case 50 random images from the training data will be reconstructed and plotted.
+
+# Part 3 - Compute the Residuals
+
 
