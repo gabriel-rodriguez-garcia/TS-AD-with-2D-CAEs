@@ -54,7 +54,7 @@ For basic modifications change the values of the argument parser variables.
 - Train a new model: If you want to train a completely new model then just make sure that mode='new_encoding' and run the main script. Also make sure to choose one of the available encodings. Here is an example:
 
 argp = parser.parse_args(
-    ['--path_data','../Part1_Encoding', \newline
+    ['--path_data','../Part1_Encoding', <br/>
      '--mode','new_encoding',
      '--dataset','training',
      '--cycles','500000',
