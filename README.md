@@ -8,6 +8,12 @@ Part 2: Train the Network,
 Part 3: Evaluate Residuals,
 Part 4: Performance Assessement
 
+The project is designed to be used in the following way:
+In part 1 the user can choose one of the 6 available encodings and run the script to encode the training and testing data.
+In part 2 the network gets trained using the encoded data, which has been created in Part 1.
+In part 3 the residuals (=errors) of the encoding images from training and testing data are computed and saved.
+In part 4 the errors are used to compute the decision threshold and a ROC Curve gets plotted.
+
 # PART 1 - Create Encodings
 
 For each of the following encodings an individual script is available to create them:
@@ -41,4 +47,9 @@ Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
 6. GS:  Training set   -> 0.3 min ||
         Validation set -> 0.1 min
 
+# PART 2 - Train the Network
+
+For basic modifications change the values of the argument parser variables. 
+
+- Train a new model: If you want to train a completely new model then just make sure that mode='new_encoding' and run the main script. Also make sure to choose one of the available encodings. The encoded data has to be 
 
