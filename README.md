@@ -55,7 +55,7 @@ For basic modifications change the values of the argument parser variables.
 
 argp = parser.parse_args( <br/>
     ['--path_data','../Part1_Encoding', <br/>
-     '--mode','new_encoding', <br/>
+     '--mode','new_training', <br/>
      '--dataset','training', <br/>
      '--cycles','500000', <br/>
      '--conv_kernel_size_1','4', <br/>
@@ -70,5 +70,32 @@ argp = parser.parse_args( <br/>
      '--checkpoint_save_steps','10000', <br/>
      '--encoding','GAF'])
      
-  In this case a new model is trained on GAF data. The model will perform 50'000 gradient descent steps using 100 encoding images in each iteration. The loss gets computed after every 10 iterations and a checkpoint of the graph is saved after every 10'000 iterations. To inspect the loss or the graph use tensorboard by running the following command in terminal: tensorboard --logdir=<absolute path to tensorboard summary>
+  In this case a new model is trained on GAF data. The model will perform 50'000 gradient descent steps using 100 encoding images in each iteration. The loss gets computed after every 10 iterations and a checkpoint of the graph is saved after every 10'000 iterations. To inspect the loss or the graph use tensorboard by running the following command in terminal: 
+ 
+ -> tensorboard --logdir = <path to tensorboard summary>
+        
+ - Continue to train a model: If you want to continue to train a model whose checkpoint has been saved before, the just change mode='continue_training'. Note that all other parameters have to be equal to the ones saved in the checkpoint.
+ 
+ <br/>
+ 
+- Test a model: If you want to visually inspect if the reconstructions are good enough then just change mode='testing'. Also choose to either inspect training or testing images. The batch_size_testing value determines how many images will be displayed. Here is an example:
+
+argp = parser.parse_args( <br/>
+    ['--path_data','../Part1_Encoding', <br/>
+     '--mode','testing', <br/>
+     '--dataset','training', <br/>
+     '--cycles','500000', <br/>
+     '--conv_kernel_size_1','4', <br/>
+     '--conv_stride_1','2', <br/>
+     '--pool_kernel_size','2', <br/>
+     '--pool_stride','2', <br/>
+     '--nr_channels_1','32',  <br/>
+     '--bottleneck_size','160', <br/>
+     '--batch_size','100', <br/>
+     '--batch_size_testing','50', <br/>
+     '--performance_eval_steps','10', <br/>
+     '--checkpoint_save_steps','10000', <br/>
+     '--encoding','GAF'])
+     
+In this case 50 random images from the training data will be reconstructed and plotted.
 
