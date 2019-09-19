@@ -53,21 +53,21 @@ For basic modifications change the values of the argument parser variables.
 
 - Train a new model: If you want to train a completely new model then just make sure that mode='new_encoding' and run the main script. Also make sure to choose one of the available encodings. Here is an example:
 
-argp = parser.parse_args(
+argp = parser.parse_args( <br/>
     ['--path_data','../Part1_Encoding', <br/>
-     '--mode','new_encoding',
-     '--dataset','training',
-     '--cycles','500000',
-     '--conv_kernel_size_1','4',
-     '--conv_stride_1','2',
-     '--pool_kernel_size','2',
-     '--pool_stride','2',
-     '--nr_channels_1','32', 
-     '--bottleneck_size','160',
-     '--batch_size','100',
-     '--batch_size_testing','50',
-     '--performance_eval_steps','10',
-     '--checkpoint_save_steps','10000',
+     '--mode','new_encoding', <br/>
+     '--dataset','training', <br/>
+     '--cycles','500000', <br/>
+     '--conv_kernel_size_1','4', <br/>
+     '--conv_stride_1','2', <br/>
+     '--pool_kernel_size','2', <br/>
+     '--pool_stride','2', <br/>
+     '--nr_channels_1','32',  <br/>
+     '--bottleneck_size','160', <br/>
+     '--batch_size','100', <br/>
+     '--batch_size_testing','50', <br/>
+     '--performance_eval_steps','10', <br/>
+     '--checkpoint_save_steps','10000', <br/>
      '--encoding','GAF'])
      
   In this case a new model is trained on GAF data. The model will perform 50'000 gradient descent steps using 100 encoding images in each iteration. The loss gets computed after every 10 iterations and a checkpoint of the graph is saved after every 10'000 iterations. To inspect the loss or the graph use tensorboard by running the following command in terminal: tensorboard --logdir=<absolute path to tensorboard summary>
