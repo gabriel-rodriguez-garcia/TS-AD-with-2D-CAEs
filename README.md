@@ -55,6 +55,8 @@ Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
 
 ![alt text](https://github.com/gabriel-rodriguez-garcia/TS-AD-with-2D-CAEs/tree/master/2D-CAE_Architecture_Image/2D-CAE_arch.png)
 
+![github-small](2D-CAE_Architecture_Image/2D-CAE_arch.png)
+
 For basic modifications change the values of the argument parser variables. 
 
 - Train a new model: If you want to train a completely new model then just make sure that mode='new_encoding' and run the main script. Also make sure to choose one of the available encodings. Here is an example:
