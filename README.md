@@ -100,4 +100,14 @@ In this case 50 random images from the training data will be reconstructed and p
 
 # Part 3 - Compute the Residuals
 
+The Residuals.py script is similar to to the main.py script of Part 2. Again for basic modifications only the argument parser variables have to be adjusted. The goal here is to compute the residuals of the training and testing reconstructions. Both are used in Part 4 to measure the model performance.
+
+- Compute training residuals:
+In order to compute all the residuals stemming from the training data, the script has to be run twice. In the first run setting the argument parser variable part='part 1' and in the second run setting part='part 2' respectively. This was required due to limited RAM of the machine running the script.
+For buth runs set the variable dataset='training'.
+
+- Compute testing residuals:
+In order to compute the residuals stemming from the testing data, the script can be run once by setting dataset='testing'.
+
+
 
