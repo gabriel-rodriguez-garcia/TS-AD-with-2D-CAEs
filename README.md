@@ -106,8 +106,18 @@ The Residuals.py script is similar to to the main.py script of Part 2. Again for
 In order to compute all the residuals stemming from the training data, the script has to be run twice. In the first run setting the argument parser variable part='part 1' and in the second run setting part='part 2' respectively. This was required due to limited RAM of the machine running the script.
 For buth runs set the variable dataset='training'.
 
+Note the graph parameters should not change from the ones saved in the checkpoint in Part 2.
+
 - Compute testing residuals:
 In order to compute the residuals stemming from the testing data, the script can be run once by setting dataset='testing'.
 
+# Part 4 -  Assess Model Performance
+
+In order to assess the model performance, make sure to have the ground truth saved in a specific folder and specify the directory when calling the function:<br/>
+measure_performance( ... ,path_ground_truth=<path to ground truth>.csv)
+
+    
+        
+       
 
 
