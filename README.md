@@ -48,6 +48,7 @@ Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
         Validation set -> 0.1 min
 
 # PART 2 - Train the Network
+![alt text](https://github.com/gabriel-rodriguez-garcia/TS-AD-with-2D-CAEs/2D-CAE_Architecture_Image/2D-CAE_arch.png)
 
 For basic modifications change the values of the argument parser variables. 
 
