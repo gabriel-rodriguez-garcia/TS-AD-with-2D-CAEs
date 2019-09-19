@@ -49,7 +49,7 @@ Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
 
 # PART 2 - Train the Network
 
-![github-small](2D-CAE_Architecture_Image/2D-CAE_arch.png)
+![github-small](Images/2D-CAE_arch.png)
 
 For basic modifications change the values of the argument parser variables. 
 
@@ -119,3 +119,5 @@ In order to assess the model performance, make sure to have the ground truth sav
 measure_performance( ... ,path_ground_truth= < path to ground truth >.csv)
 
 Run the Performance.py script to see the roc curve.
+
+![github-small](Images/gaf_denorm_roc.png)
