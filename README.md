@@ -121,4 +121,4 @@ measure_performance( ... ,path_ground_truth= < path to ground truth >.csv)
 
 Run the Performance.py script to see the roc curve.
 
-![github-small](Images/gaf_denorm_roc.png)
+![github-small](Images/SC_roc.png)
