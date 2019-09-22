@@ -105,20 +105,18 @@ In this case 50 random images from the training data will be reconstructed and p
 
 # Part 3 - Compute the Residuals
 
-The Residuals.py script is similar to to the main.py script of Part 2. Again for basic modifications only the argument parser variables have to be adjusted. The goal here is to compute the residuals of the training and testing reconstructions. Both are used in Part 4 to measure the model performance.
+The Residuals.py script is almost identical to the main.py script of Part 2. The goal here is to compute the residuals of the training and testing reconstructions. Both are used in Part 4 to measure the model's performance. Note the graph parameters should not change from the ones saved in the checkpoint in Part 2.
 
 - Compute training residuals:
-In order to compute all the residuals stemming from the training data, the script has to be run twice. In the first run setting the argument parser variable part='part 1' and in the second run setting part='part 2' respectively. This was required due to limited RAM of the machine running the script.
-For buth runs set the variable dataset='training'.
-
-Note the graph parameters should not change from the ones saved in the checkpoint in Part 2.
+In order to compute all the residuals stemming from the training data, the script has to be run twice. In the first run setting the argument parser variable part='part 1' and in the second run setting part='part 2' respectively. This was required due to limited RAM of the used machine.
+For both runs set the variable dataset='training'.
 
 - Compute testing residuals:
-In order to compute the residuals stemming from the testing data, the script can be run once by setting dataset='testing'.
+In order to compute the residuals stemming from the testing data, the script must only be run once by setting dataset='testing'.
 
 # Part 4 -  Model Performance Assessement
 
-In order to assess the model performance, make sure to have the ground truth saved in a specific folder and specify the directory when calling the function:<br/>
+In order to assess the model's performance, make sure to have the ground truth saved in a specific folder and specify the directory when calling the function:<br/>
 measure_performance( ... ,path_ground_truth= < path to ground truth >.csv)
 
 Run the Performance.py script to see the roc curve.
