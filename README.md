@@ -116,7 +116,7 @@ Note the graph parameters should not change from the ones saved in the checkpoin
 - Compute testing residuals:
 In order to compute the residuals stemming from the testing data, the script can be run once by setting dataset='testing'.
 
-# Part 4 -  Assess Model Performance
+# Part 4 -  Model Performance Assessement
 
 In order to assess the model performance, make sure to have the ground truth saved in a specific folder and specify the directory when calling the function:<br/>
 measure_performance( ... ,path_ground_truth= < path to ground truth >.csv)
