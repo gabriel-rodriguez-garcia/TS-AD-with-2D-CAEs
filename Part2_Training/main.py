@@ -28,9 +28,9 @@ parser.add_argument("--path_data", type=str, help="Path to folder of input data"
 
 parser.add_argument("--mode", choices=["new_training","continue_training","testing"])
 parser.add_argument("--dataset", choices=["training","testing"])
-parser.add_argument("--cycles",                type=int)
-parser.add_argument("--performance_eval_steps",type=int, help="Interval: number of steps to compute loss")
-parser.add_argument("--checkpoint_save_steps", type=int, help="Interval: number of steps to a checkpoint of the Model state")
+parser.add_argument("--cycles",                type=int, help="Number of gradient descent steps")
+parser.add_argument("--performance_eval_steps",type=int, help="Interval: number of steps to compute the loss")
+parser.add_argument("--checkpoint_save_steps", type=int, help="Interval: number of steps to create a checkpoint of the model's state")
 parser.add_argument("--batch_size_testing",    type=int, help="Number of images to show when testing")
 parser.add_argument("--batch_size",            type=int, help="Number of images to use for computing loss while training")
 
@@ -46,14 +46,14 @@ parser.add_argument("--bottleneck_size",       type=int, help="Number of neurons
 # Encodings
 parser.add_argument("--encoding",              type=str, 
                     choices=["GAF","MTF","RP","SP","SC","GS"],
-                    help="Note, the encoding image matrix (e.g. X_gaf_red.npy) must be saved in the Dataset folder!")
+                    help="The encoding image matrix (e.g. X_gaf.npy) must be created first in Part 1!")
 
 
 argp = parser.parse_args(
     ['--path_data','../Part1_Encoding',
-     '--mode','continue_training',
+     '--mode','new_training',
      '--dataset','training',
-     '--cycles','1000',
+     '--cycles','50000',
      '--conv_kernel_size_1','4',
      '--conv_stride_1','2',
      '--pool_kernel_size','2',
@@ -63,8 +63,8 @@ argp = parser.parse_args(
      '--batch_size','100',
      '--batch_size_testing','10',
      '--performance_eval_steps','10',
-     '--checkpoint_save_steps','1000',
-     '--encoding','GS'])
+     '--checkpoint_save_steps','10000',
+     '--encoding','GAF'])
 
 ### Import Encoding Matrix
 ########################################################
@@ -262,6 +262,7 @@ class ConvolutionalAutoencoder(object):
                 plt.colorbar(image_recon, fraction=0.0457, pad=0.04, ax=axes[1])
                 plt.colorbar(image_residual, fraction=0.0457, pad=0.04, ax=axes[2])
                 
+                # the colorbar limits can either be changed or left out entirely. In this case the limits get set automatically.
                 if argp.encoding=='GAF':
                     image_org.set_clim(-1, 0.5)
                     image_recon.set_clim(-1, 0.5)
