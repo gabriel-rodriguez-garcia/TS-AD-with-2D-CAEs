@@ -1,7 +1,6 @@
 ### TimeSeries-AnomalyDetection-with-2D-CAEs ###
 
 # Code Structure
-
 The code is divided into 4 parts:
 Part 1: Create Encodings,
 Part 2: Train the Network,
@@ -12,7 +11,7 @@ The project is designed to be used in the following way:
 In part 1 the user can choose one of the 6 available encodings and run the script to encode the training and testing data.
 In part 2 the network gets trained using the encoded data, which has been created in Part 1.
 In part 3 the residuals (=errors) of the encoding images from training and testing data are computed and saved.
-In part 4 the errors are used to compute the decision threshold and a ROC Curve gets plotted.
+In part 4 the errors are used to compute the decision threshold and a ROC Curve gets plotted to analyze the model's performance against the ground truth.
 
 # PART 1 - Create Encodings
 
@@ -24,7 +23,11 @@ For each of the following encodings an individual script is available to create 
 5. Scalogram (SC)
 6. Gray Scale Images (GS)
 
-In general the default parameters in each script have been selected as to produce encodings of size 64x64, which is what the default network expects for training. Creating images of different size can for some encodings be non trivial (SP, SC and GS), therefore the user is expected to understand the code before modifying any parameters.
+In general the default parameters in each script have been selected as to produce encoding images of size 64x64, which is what the default network expects for training. Creating images of different size can for some encodings be non trivial. This is the case for SP, SC and GS. Make sure to understand the encoding mechanism to readjust parameters.
+
+Encoding file sizes for image size 64x64:
+1. Training Data: 6.59 GB
+2. Testing Data: 2.34 GB
 
 Creation times for each encoding based on default training and validation datasets:
 Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
