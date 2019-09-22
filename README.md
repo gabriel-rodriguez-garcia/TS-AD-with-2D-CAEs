@@ -32,23 +32,23 @@ Encoding file sizes for image size 64x64:
 Creation times for each encoding based on default training and validation datasets:
 Reference Machine: Mac Book Pro 2018, 16 GB RAM, 2.2 GHz Intel Core i7
 
-1. GAF: Training set   -> 8 min || <br/>
-        Validation set -> 2.5 min
+1. GAF: Training set   : 8 min  <br/>
+        Validation set : 2.5 min
         
-2. MTF: Training set   -> 12 min || <br/>
-        Validation set -> 3.5 min
+2. MTF: Training set   : 12 min <br/>
+        Validation set : 3.5 min
         
-3. RP:  Training set   -> 11 min || <br/>
-        Validation set -> 3 min
+3. RP:  Training set   : 11 min <br/>
+        Validation set : 3 min
         
-4. SP:  Training set   -> 1 min || <br/>
-        Validation set -> 0.3 min
+4. SP:  Training set   : 1 min <br/>
+        Validation set : 0.3 min
         
-5. SC:  Training set   -> 33 min || <br/>
-        Validation set -> 11 min
+5. SC:  Training set   : 33 min <br/>
+        Validation set : 11 min
         
-6. GS:  Training set   -> 0.3 min || <br/>
-        Validation set -> 0.1 min
+6. GS:  Training set   : 0.3 min <br/>
+        Validation set : 0.1 min
 
 # PART 2 - Train the Network
 
