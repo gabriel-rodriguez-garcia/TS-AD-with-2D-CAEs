@@ -25,7 +25,7 @@ parser.add_argument("--path_data", type=str, help="Path to folder of input data"
 # Work Schedule
 parser.add_argument("--mode", choices=["testing"])
 parser.add_argument("--dataset", choices=["training","testing"])
-parser.add_argument("--cycles",                type=int)
+parser.add_argument("--cycles",                type=int,help="Number of gradient descent steps")
 parser.add_argument("--performance_eval_steps",type=int, help="Interval: number of steps to compute loss")
 parser.add_argument("--checkpoint_save_steps", type=int, help="Interval: number of steps to a checkpoint of the Model state")
 parser.add_argument("--batch_size_testing",    type=int, help="Number of images to show when testing")
@@ -44,14 +44,14 @@ parser.add_argument("--bottleneck_size",       type=int, help="Number of neurons
 # Encodings
 parser.add_argument("--encoding",              type=str,
                     choices=["GAF","MTF","RP","SP","SC","GS"],
-                    help="Note, the encoding image matrix (e.g. X_gaf_red.npy) must be saved in the Dataset folder!")
+                    help="Choose the encoding, which has been used in Part 2 to train the network.")
 
-
+# The Architecture parameters must exactly overlap with the ones in Part 2.
 argp = parser.parse_args(
     ['--path_data','../Part1_Encoding',
      '--mode','testing',
-     '--dataset','testing',
-     '--part','part 2',
+     '--dataset','training',
+     '--part','part 1',
      '--cycles','50000',
      '--conv_kernel_size_1','4',
      '--conv_stride_1','2',
@@ -63,7 +63,7 @@ argp = parser.parse_args(
      '--batch_size_testing','20',
      '--performance_eval_steps','10',
      '--checkpoint_save_steps','10000',
-     '--encoding','GS'])
+     '--encoding','GAF'])
 
 
 ### Import Encoding Matrix
@@ -233,7 +233,7 @@ class ConvolutionalAutoencoder(object):
             saver, global_step = Model.continue_previous_session(sess, ckpt_file='../Part2_Training/saver/checkpoint')
             
             batch_size = 1
-
+            
             if argp.dataset == 'training':
                 x = batch.get_batch( dataset_name=argp.dataset, dataset=X, part=argp.part)
             elif argp.dataset == 'testing':
@@ -242,7 +242,12 @@ class ConvolutionalAutoencoder(object):
                 sys.exit('Unexpected argument parser value for variable "dataset" ')
 
             if argp.dataset=='training':
-
+              
+                # The reconstruction of all the images at once was not possible on the used machine. 
+                # Instead they are divided into 1st and 2nd part. Each part is further broken down into k steps.
+                # On a different machine with more Memory this can be simplified. 
+                
+                # Note that GS encoding has lower number of images than the rest of the encoding types.
                 if argp.encoding == 'GS':
                     k=1677
                 else:
